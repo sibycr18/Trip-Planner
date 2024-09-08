@@ -3,13 +3,16 @@
 <link rel="stylesheet" href="style.css">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trip Planner</title>
 </head>
 
 <body>
     <center>
         <h1>Trip Planner</h1>
+        <br>
 
+        <h3>Trip Details</h3>
         <label for="totalBudget">Total Budget per head: </label>
         <input type="number" id="totalBudget">
 
@@ -36,6 +39,13 @@
             </tbody>
         </table><br>
 
+        <label for="expenseName">Expense Name: </label>
+        <input type="text" id="expenseName">
+        <label for="expenseCost">Cost: </label>
+        <input type="number" id="expenseCost">
+        <button id="addExpenseButton">Add Expense</button>
+        <br><br><br>
+
         <table id="totalTable">
             <caption >Budget</caption>
             <thead>
@@ -51,16 +61,7 @@
             </tbody>
         </table><br>
 
-        <section id="addExpenseSection"></section><br>
-
-        <label for="expenseName">Expense Name: </label>
-        <input type="text" id="expenseName">
-        <label for="expenseCost">Cost: </label>
-        <input type="number" id="expenseCost">
-        <button id="addExpenseButton">Add Expense</button>
-
-        <br><br><br>
-        <button id="clearAllButton">Clear All</button>
+        <button id="clearAllButton">Clear Everything</button>
     </center>
 
     <script src="script.js"></script>
