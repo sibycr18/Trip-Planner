@@ -21,3 +21,13 @@ button {
 .no-border {
     border: none !important;
 }
+
+caption {
+    font-size: larger;
+    font-weight: bold;
+    padding: 6px;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
