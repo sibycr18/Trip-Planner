@@ -1,0 +1,23 @@
+table {
+    width: 100; /* Optional: Makes the table span the full width */
+    border-collapse: collapse; /* Removes extra space between borders */
+}
+
+table, th, td {
+    text-align: center; /* Center-aligns the content of headers and cells */
+    border: 1px solid black; /* Adds a border to the table, headers, and cells */
+    padding: 10px; /* Adds padding for better spacing */
+}
+
+input {
+    margin-right: 10px;
+    /* Adjust this value for horizontal spacing between elements */
+}
+
+button {
+    margin-right: 10px;
+}
+
+.no-border {
+    border: none !important;
+}
