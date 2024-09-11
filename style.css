@@ -1,6 +1,19 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
 table {
     width: 100; /* Optional: Makes the table span the full width */
     border-collapse: collapse; /* Removes extra space between borders */
+    margin-bottom: 10px;
 }
 
 table, th, td {
@@ -9,17 +22,19 @@ table, th, td {
     padding: 10px; /* Adds padding for better spacing */
 }
 
-input {
-    margin-right: 10px;
-    /* Adjust this value for horizontal spacing between elements */
+.multi-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+
+.form {
+    margin-right: 17px;
 }
 
 button {
     margin-right: 10px;
-}
-
-.no-border {
-    border: none !important;
 }
 
 caption {
@@ -28,6 +43,18 @@ caption {
     padding: 6px;
 }
 
-* {
-    font-family: Arial, Helvetica, sans-serif;
+.section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+h1, h2 {
+    margin-bottom: 4px;
+}
+
+#clearAllButton {
+    margin-top: 20px;
 }
