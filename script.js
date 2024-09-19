@@ -6,6 +6,7 @@ totalBudget.value = localStorage.getItem('totalBudget') || 0;
 
 let people = document.querySelector('#people');
 people.value = localStorage.getItem('people') || 1;
+let selectedIndex = 0;
 
 populateTable();
 
@@ -102,6 +103,7 @@ updateButton.addEventListener('click', () => {
 });
 
 function editRow(index) {
+    selectedIndex = index;
     const nameInput = document.querySelector('#expenseName');
     const costInput = document.querySelector('#expenseCost');
     const button = document.querySelector('#addExpenseButton');
@@ -154,11 +156,11 @@ function addExpense() {
     populateTable();
 }
 
-function editExpense(index) {
+function editExpense() {
     const name = nameInput.value;
     const cost = parseInt(costInput.value);
     if (name && !isNaN(cost)) {
-        expenses.splice(index, 1, { name, cost });
+        expenses.splice(selectedIndex, 1, { name, cost });
         localStorage.setItem('expenses', JSON.stringify(expenses));
         nameInput.value = '';
         costInput.value = '';
