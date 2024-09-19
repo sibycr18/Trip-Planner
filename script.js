@@ -2,17 +2,27 @@
 let expenses = JSON.parse(localStorage.getItem('expenses')) || [];
 
 let totalBudget = document.querySelector('#totalBudget');
-totalBudget.value = localStorage.getItem('totalBudget') || 0;
+totalBudget.value = localStorage.getItem('totalBudget') || 1000;
 
 let people = document.querySelector('#people');
 people.value = localStorage.getItem('people') || 1;
 let selectedIndex = 0;
 
+// if (expenses.length > 0) {
+//     populateTable();
+// }
 populateTable();
 
 // Populate the table
 function populateTable() {
     clearTable();
+
+    const expenseTable = document.querySelector('#expensesTable');
+    if (expenses.length === 0) {
+        expenseTable.style = 'display: none';
+    } else {
+        expenseTable.style.removeProperty('display');
+    }
 
     const expenseTableBody = document.querySelector('#expensesTable tbody');
     let totalBudget = document.querySelector('#totalBudget').value;
@@ -35,16 +45,21 @@ function populateTable() {
         overallCostCell.textContent = expense.cost * people;
         row.appendChild(overallCostCell);
 
-        // Create the delete button cell
+        // Create the action buttons cell
         const actionCell = document.createElement('td');
+        const actionDiv = document.createElement('div');
+        actionDiv.className = 'actions';
         const editButton = document.createElement('button');
-        editButton.textContent = 'Edit';
+        editButton.className = 'actionButton';
+        editButton.innerHTML = '<ion-icon name="pencil-sharp"></ion-icon>';
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
+        deleteButton.className = 'actionButton';
+        deleteButton.innerHTML = '<ion-icon name="trash-sharp"></ion-icon>';
         editButton.addEventListener('click', () => editRow(index));
         deleteButton.addEventListener('click', () => deleteRow(index));
-        actionCell.appendChild(editButton);
-        actionCell.appendChild(deleteButton);
+        actionDiv.appendChild(editButton);
+        actionDiv.appendChild(deleteButton);
+        actionCell.appendChild(actionDiv);
         row.appendChild(actionCell);
 
         expenseTableBody.appendChild(row);
@@ -55,15 +70,15 @@ function populateTable() {
     // Create the total row
     const totalRow = document.createElement('tr');
 
-    const totalCell = document.createElement('th');
-    totalCell.textContent = 'Total';
+    const totalCell = document.createElement('td');
+    totalCell.textContent = 'Outstanding';
     totalRow.appendChild(totalCell);
 
-    const totalCostCell = document.createElement('th');
+    const totalCostCell = document.createElement('td');
     totalCostCell.textContent = totalCost;
     totalRow.appendChild(totalCostCell);
 
-    const totalOverallCostCell = document.createElement('th');
+    const totalOverallCostCell = document.createElement('td');
     totalOverallCostCell.textContent = totalCost * people;
     totalRow.appendChild(totalOverallCostCell);
 
