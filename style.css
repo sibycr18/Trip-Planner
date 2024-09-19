@@ -1,40 +1,74 @@
-* {
+html,
+body {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 .container {
+    margin: 15px;
+    padding: 30px;
+    min-height: calc(100vh - 30px);
+    min-width: 650px;
+    width: calc(100vw - 30px);
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    margin: 10px;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    background-color: beige;
+}
+
+.header {
+    margin-bottom: 20px;
 }
 
 table {
-    width: 100; /* Optional: Makes the table span the full width */
-    border-collapse: collapse; /* Removes extra space between borders */
+    width: 100;
+    border-collapse: collapse;
+    margin-top: 2px;
     margin-bottom: 10px;
 }
 
-table, th, td {
-    text-align: center; /* Center-aligns the content of headers and cells */
-    border: 1px solid black; /* Adds a border to the table, headers, and cells */
-    padding: 10px; /* Adds padding for better spacing */
+table,
+th,
+td {
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
 }
 
-.multi-form {
+.main-content {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
-    margin: 10px;
+    align-items: center;
 }
 
-.form {
-    margin-right: 17px;
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    gap: 10px;
 }
 
-button {
-    margin-right: 10px;
+.first-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 caption {
@@ -49,12 +83,52 @@ caption {
     justify-content: center;
     flex-direction: column;
     margin: 10px;
+    padding: 30px;
+    background-color: aliceblue;
+    border-radius: 15px;
+    border: 1px solid black;
 }
 
-h1, h2 {
-    margin-bottom: 4px;
+h1 {
+    margin: 10px;
+    color: brown;
+    text-shadow: 0.1px 0.1px 1px #7d4040;
+}
+
+h2 {
+    margin: 4px;
 }
 
 #clearAllButton {
     margin-top: 20px;
+}
+
+button {
+    background-color: #4caf50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Removes border */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin-right: 10px; /* Adds space to the right of each button */
+    height: 30px;
+    cursor: pointer; /* Changes cursor on hover */
+    border-radius: 5px; /* Rounds the corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds shadow effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #45a049; /* Slightly darker green on hover */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2); /* Darker and larger shadow on hover */
+}
+
+button:active {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow on click */
+    transform: translateY(2px); /* Makes it look like the button is pressed */
+}
+
+button:last-child {
+    margin-right: 0; /* Removes margin from the last button to avoid extra space */
 }

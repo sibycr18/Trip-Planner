@@ -9,70 +9,74 @@
 
     <body>
         <div class="container">
-            <h1>Trip Planner</h1>
+            <div class="header">
+                <h1>Trip Planner</h1>
+            </div>
 
-            <div class="section">
-                <h2>Trip Details</h2>
-                <div class="multi-form">
-                    <div class="form">
-                        <label for="totalBudget">Total Budget per head: </label>
-                        <input type="number" id="totalBudget" />
+            <div class="main-content">
+                <div class="first-row">
+                    <div class="section" style="height: 230px; width: 400px;">
+                        <h2>Trip Details</h2>
+                        <div class="form-container">
+                            <div class="form">
+                                <label for="totalBudget">Total Budget per head: </label>
+                                <input type="number" id="totalBudget" />
+                            </div>
+                            <div class="form">
+                                <label for="people">No. of people: </label>
+                                <input type="number" id="people" />
+                            </div>
+                    
+                            <button id="updateButton"  style="width: 147px;">Update</button>
+                        </div>
                     </div>
-                    <div class="form">
-                        <label for="people">No. of people: </label>
-                        <input type="number" id="people" />
+                    <div class="section" style="height: 230px; width: 400px;">
+                        <h2>Budget</h2>
+                        <table id="totalTable">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Cost/head</th>
+                                    <th>Overall Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Rows will be inserted here -->
+                            </tbody>
+                        </table>
                     </div>
+                </div>
+                <div class="section">
+                    <h2>Expenses</h2>
+                    <table id="expensesTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Cost/head</th>
+                                <th>Overall Cost</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be inserted here -->
+                        </tbody>
+                    </table>
+                    <div class="form-container">
+                        <div class="form">
+                            <label for="expenseName">Expense Name: </label>
+                            <input type="text" id="expenseName" />
+                        </div>
+                        <div class="form">
+                            <label for="expenseCost">Cost: </label>
+                            <input type="number" id="expenseCost" />
+                        </div>
                 
-                    <button id="updateButton">Update</button>
+                        <button id="addExpenseButton" style="width: 147px;">Add Expense</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="section">
-                <h2>Expenses</h2>
-                <table id="expensesTable">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Cost/head</th>
-                            <th>Overall Cost</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Rows will be inserted here -->
-                    </tbody>
-                </table>
-                <div class="multi-form">
-                    <div class="form">
-                        <label for="expenseName">Expense Name: </label>
-                        <input type="text" id="expenseName" />
-                    </div>
-                    <div class="form">
-                        <label for="expenseCost">Cost: </label>
-                        <input type="number" id="expenseCost" />
-                    </div>
-                
-                    <button id="addExpenseButton">Add Expense</button>
-                </div>
-            </div>
-
-            <div class="section">
-                <h2>Budget</h2>
-                <table id="totalTable">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Cost/head</th>
-                            <th>Overall Cost</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Rows will be inserted here -->
-                    </tbody>
-                </table>
-            </div>
-
-            <button id="clearAllButton">Clear Everything</button>
+            <button id="clearAllButton" style="width: 147px;">Clear Everything</button>
         </div>
 
         <script src="script.js"></script>
