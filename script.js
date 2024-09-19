@@ -37,12 +37,12 @@ function populateTable() {
         row.appendChild(nameCell);
 
         const costCell = document.createElement('td');
-        costCell.textContent = expense.cost;
+        costCell.textContent = '₹' + expense.cost;
         totalCost += expense.cost;
         row.appendChild(costCell);
 
         const overallCostCell = document.createElement('td');
-        overallCostCell.textContent = expense.cost * people;
+        overallCostCell.textContent = '₹' + (expense.cost * people);
         row.appendChild(overallCostCell);
 
         // Create the action buttons cell
@@ -75,11 +75,11 @@ function populateTable() {
     totalRow.appendChild(totalCell);
 
     const totalCostCell = document.createElement('td');
-    totalCostCell.textContent = totalCost;
+    totalCostCell.textContent = '₹' + totalCost;
     totalRow.appendChild(totalCostCell);
 
     const totalOverallCostCell = document.createElement('td');
-    totalOverallCostCell.textContent = totalCost * people;
+    totalOverallCostCell.textContent = '₹' + totalCost * people;
     totalRow.appendChild(totalOverallCostCell);
 
     totalTableBody.appendChild(totalRow);
@@ -92,11 +92,11 @@ function populateTable() {
     remainingTotalRow.appendChild(remainingCell);
 
     const remainingBudget = document.createElement('td');
-    remainingBudget.textContent = totalBudget - totalCost;
+    remainingBudget.textContent = '₹' + (totalBudget - totalCost);
     remainingTotalRow.appendChild(remainingBudget);
 
     const remainingOverallBudget = document.createElement('td');
-    remainingOverallBudget.textContent = (totalBudget - totalCost) * people;
+    remainingOverallBudget.textContent = '₹' + ((totalBudget - totalCost) * people);
     remainingTotalRow.appendChild(remainingOverallBudget);
 
     totalTableBody.appendChild(remainingTotalRow);
